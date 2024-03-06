@@ -2,6 +2,7 @@
 
 const buttonAddRandom = document.querySelector("#btn-add-random");
 const tableBody = document.querySelector("tbody#contacts");
+const colorLike = document.querySelector(".btn-like")
 
 // ITERATION 0 | Example Row
 // Splice 1 element from the contacts array at the random index
@@ -33,7 +34,7 @@ const tableBody = document.querySelector("tbody#contacts");
 
 // ITERATION 1 - Display 3 contacts
 // Get the first 3 contacts from the 'contacts' array.
-const threeContacts = contacts.splice(0, 3);
+const threeContacts = contacts.splice(0, 6);
 
 // Your code goes here ...
 function getContact() {
@@ -53,7 +54,7 @@ function getContact() {
   </td>
   <td>
     <button class="btn-like">
-      <img src="./images/icon.png" alt="like" />
+      <img src="./images/icon.png" alt="like" class="icon-like"/>
     </button>
   </td>
 `;
@@ -80,7 +81,17 @@ tableBody.addEventListener("click", (event) => {
 // ITERATION 3 - Like Buttons
 
 // Your code goes here ...
+tableBody.addEventListener("click", (event) => {
+  const target = event.target;
 
+  if (target.classList.contains("btn-like") ||
+    target.closest(".btn-like") ||
+    target.classList.contains("icon-like") ||
+    target.closest(".icon-like")) {
+    const likeButton = target.closest(".btn-like") || target.closest(".icon-like");
+    likeButton.classList.toggle("selected");
+  }
+});
 
 
 
