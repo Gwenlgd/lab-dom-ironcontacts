@@ -34,7 +34,7 @@ const colorLike = document.querySelector(".btn-like")
 
 // ITERATION 1 - Display 3 contacts
 // Get the first 3 contacts from the 'contacts' array.
-const threeContacts = contacts.splice(0, 6);
+const threeContacts = contacts.splice(0, 4);
 
 // Your code goes here ...
 function getContact() {
@@ -99,3 +99,7 @@ tableBody.addEventListener("click", (event) => {
 // Bonus: ITERATION 4 - Add Random Contacts
 
 // Your code goes here ...
+
+buttonAddRandom.addEventListener("click", (event) => {
+  getContact(contacts)
+});
